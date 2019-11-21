@@ -1,18 +1,19 @@
 package guestbook;
 
+import guestbook.jdbc.GuestBookRepository;
+
 public class GuestbookService {
 
     private SpamChecker spamChecker;
     private RateLimiter rateLimiter;
-    private JpaRepository jpaRepository;
+    private GuestBookRepository jpaRepository;
 
     public GuestbookService() {
         this.spamChecker = new SpamChecker();
         this.rateLimiter = new RateLimiter();
-        this.jpaRepository = new JpaRepository();
     }
 
-    public void create(GuestbookEntry guestbookEntry, String ipAddress){
+    public void create(GuestbookEntry guestbookEntry, String ipAddress) {
         if (spamChecker.isSpam(guestbookEntry.getContent())) {
             throw new RuntimeException("Spam words in content");
         }
