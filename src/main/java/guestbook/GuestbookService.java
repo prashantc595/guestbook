@@ -1,6 +1,7 @@
 package guestbook;
 
-import guestbook.jdbc.GuestBookRepository;
+import guestbook.domain.GuestbookEntry;
+import guestbook.jpa.GuestBookRepository;
 
 public class GuestbookService {
 
