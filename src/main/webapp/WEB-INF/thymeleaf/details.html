@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Guest Book Details</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" method="post">
+    <div>
+        <p><label>Name</label><input type="text"  name="name" /></p>
+        <p><label>Content</label><input type="text" name="content"  /></p>
+        <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
+    </div>
+</form>
+<div>
+    <table>
+        <tr th:each="guest: ${data}">
+            <td th:text="${guest.name}" />
+            <td th:text="${guest.content}" />
+            
+        </tr>
+    </table>
+</div>
+</body>
+</html>

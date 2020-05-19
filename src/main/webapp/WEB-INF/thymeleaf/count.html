@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Users</h2>
+<table border="1">
+    <tr>
+        <th>User</th>
+        <th>Count</th>
+    </tr>
+    <tr th:each = "guest: ${users}">
+        <td th:text="${guest[0]}"></td>
+        <td th:text="${guest[1]}"></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
